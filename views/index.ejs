@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <div class="container-flui cont-w">
+        <div class="menu">
+            <div class="logo-index">
+                <h1>ThuVien</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/demo/index.html"><i class="fa-solid fa-house"></i>Trang chủ</a></li>
+                    <li><a href=""><i class="fa-regular fa-user"></i>Account</a></li>
+                    <li><a href=""><i class="fa-solid fa-shop"></i> Products </a></li>
+                    <li><a href=""><i class="fa-regular fa-heart"></i>Feedback</a></li>
+                    <li><a href=""><i class="fa-solid fa-chart-pie"></i>Thống kê</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content-index">
+            <div class="admin">
+                <div class="search">
+                    <form action="">
+                        <input type="search" placeholder="Tìm kiếm ...">
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+                <div class="user">
+
+                    <div class="img-user">
+                        <span><i class="fa-regular fa-bell"></i></span>
+                        <div class="img">
+
+                            <img src="/img/admin/avt admin.jpg" alt="" width="50px">
+
+                        </div>
+                        <span>Hello! Admin</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-index">
+                <div class="table-account">
+                    <div class="acc-title">
+                        <i class="fa-solid fa-book bb"></i>
+                        <h3>List-Book</h3>
+                    </div>
+                    <div class="add">
+                        <button class="add-button bt"><i class="fa-solid fa-plus"></i>Thêm sản phẩm</button>
+                       <form action="">
+                        <div class="form-group" style="margin-top: -10px;">
+                            <label for="">NameBook</label>
+                            <input type="text" name="" id="" class="name-search" >
+                        </div>
+                        <button class="button-search">Tìm</button>
+                        
+                       </form>
+                    </div>
+                    <div class="acc-table">
+                        <table>
+                            <thead>
+                                <th>id</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Author</th>
+                                <th>Active</th>
+                                <th></th>
+                            </thead>
+                            <tbody>
+                               
+                                <% data.forEach(product => { %>
+                                    <tr>
+                                        <td><%= product.id %></td>
+                                        <td><%= product.name %></td>
+                                        <td><%= product.price %></td>
+                                        <td><%= product.description.length > 50 ? product.description.substring(0, 50) + '...' : product.description %></td>
+
+                                        <td><img src="/uploads/<%= product.image %>" width="100px" alt=""></td>
+                                        <td><%= product.author %></td>
+                                        <td>
+                                            
+                                            <a href=""><i class="fa-solid fa-file-pen"></i></a>
+                                           
+                                           
+                                        </td>
+                                        <td>
+                                            <a href=""><i class="fa-solid fa-trash-can"></i></a>
+                                        </td>
+                                    </tr>
+                               <%  }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
